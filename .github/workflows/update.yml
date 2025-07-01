@@ -23,6 +23,7 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+      - run: rm -r x
       - uses: actions/download-artifact@v4
       - name: Commit updates
         run: |
