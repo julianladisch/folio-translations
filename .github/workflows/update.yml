@@ -24,13 +24,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
-      - run: |
-          pwd
-          ls -al
-          ls -al x
       - name: Commit updates
         run: |
           git config --local user.name 'folio-translations repository bot'
           git config --local user.email 'folio-translations@users.noreply.github.com'
-          git add updated
+          git add x
           (git commit -m "Update translations" && git push) || true   # ignore failure caused by unchanged files
